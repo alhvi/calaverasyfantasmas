@@ -14,11 +14,7 @@ public class Enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Mathf.Abs(transform.position.x) > 25f || Mathf.Abs(transform.position.z) > 25f) {
-            Vector3 playerTransform = GameManager.instance.player.transform.forward;
-            //transform.forward *= -1;
-            //transform.forward = new Vector3(playerTransform.x, 0, playerTransform.z);
-            transform.LookAt(GameManager.instance.player.transform);
-            transform.forward = new Vector3(transform.forward.x, 0, transform.forward.z);
+            transform.forward = new Vector3(transform.forward.x*-1, 0, transform.forward.z*-1);
         }
 
 
